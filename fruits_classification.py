@@ -11,6 +11,7 @@ Original file is located at
 
 cd data
 
+# downloading the data store
 !wget https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/apple.npy
 !wget https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/banana.npy
 !wget https://storage.googleapis.com/quickdraw_dataset/full/numpy_bitmap/blueberry.npy
@@ -21,6 +22,7 @@ cd data
 
 cd ..
 
+# importing libraries
 from sklearn.model_selection import train_test_split as tts
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Conv2D, MaxPooling2D, Flatten
@@ -39,6 +41,7 @@ N_EPOCHS = 10
 
 files = ["apple.npy", "banana.npy", "blueberry.npy", "grapes.npy", "pear.npy", "pineapple.npy", "watermelon.npy"]
 
+# helper functions
 def load(dir, reshaped, files):
 
   data = []
@@ -83,9 +86,9 @@ def make_labels(N1, N2):
     labels += [i] * N2
   return labels
 
-apple_fruit = load("data/", False, ['apple.npy'])
+# apple_fruit = load("data/", False, ['apple.npy'])
 
-visualize(apple_fruit[0][0])
+# visualize(apple_fruit[0][0])
 
 fruits = load("data/", True, files)
 fruits = set_limit(fruits, N)
