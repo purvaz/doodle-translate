@@ -90,6 +90,7 @@ def make_labels(N1, N2):
 
 # visualize(apple_fruit[0][0])
 
+# data split
 fruits = load("data/", True, files)
 fruits = set_limit(fruits, N)
 fruits = list(map(normalize, fruits))
